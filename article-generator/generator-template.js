@@ -1,25 +1,29 @@
-// Nedded html info
-const stringFromMd =
-`
-    <h1>Sample text!</h1>
-`
-const articleTitle = 'Article doc'
-
 // To export html template
-const myHtml =
-`<!doctype html>
+
+const template = ({ htmlFromReadedMd, docTitle }) => {
+  return `
+<!doctype html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>${articleTitle}</title>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+    <title>${docTitle}</title>
 </head>
 
 <body>
     <div id="app">
-        ${stringFromMd}
+        ${htmlFromReadedMd}
     </div>
 
     <script type="module" src="/src/main.js"></script>
@@ -27,6 +31,7 @@ const myHtml =
     
 </html>
 `
+}
 
 // Exporting the html template + string
-export { myHtml }
+export { template }

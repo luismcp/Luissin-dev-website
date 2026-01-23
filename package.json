@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "marked": "17.0.1",
     "standard": "17.1.2",
     "vite": "npm:rolldown-vite@7.2.5"
   },

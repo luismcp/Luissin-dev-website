@@ -15,6 +15,9 @@ importers:
         specifier: 5.2.7
         version: 5.2.7
     devDependencies:
+      marked:
+        specifier: 17.0.1
+        version: 17.0.1
       standard:
         specifier: 17.1.2
         version: 17.1.2
@@ -906,6 +909,11 @@ packages:
 
   loose-envify@1.4.0:
     resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
+    hasBin: true
+
+  marked@17.0.1:
+    resolution: {integrity: sha512-boeBdiS0ghpWcSwoNm/jJBwdpFaMnZWRzjA6SkUMYb40SVaN1x7mmfGKp0jvexGcx+7y2La5zRZsYFZI6Qpypg==}
+    engines: {node: '>= 20'}
     hasBin: true
 
   math-intrinsics@1.1.0:
@@ -2349,6 +2357,8 @@ snapshots:
   loose-envify@1.4.0:
     dependencies:
       js-tokens: 4.0.0
+
+  marked@17.0.1: {}
 
   math-intrinsics@1.1.0: {}
 

@@ -1,14 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\(', '\)']],
+                displayMath: [['$$', '$$'], ['\[', '\]']]
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+    <title>Sample title</title>
 </head>
 
 <body>
-    <h1>Sample text</h1>
+    <div id="app">
+        <h1>Hola mundo!</h1>
+        <h2>Comprendamos la programación de este sitio</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit volutpat iaculis, inceptos leo potenti magna fusce sem
+            nunc nulla, montes at natoque lobortis arcu dis primis consequat. Ligula turpis sed mollis cubilia curae
+            fermentum luctus phasellus ultricies quisque cras, taciti sollicitudin ante tellus pellentesque dapibus
+            lacus habitant at nostra. <strong>Phasellus</strong> natoque condimentum cras sollicitudin parturient nunc
+            <strong>est ligula, proin eleifend dis commodo dictumst</strong> fringilla nisi, posuere purus metus
+            imperdiet nostra lacus tempor.
+        </p>
+        <ul>
+            <li>This is a list template</li>
+            <li>Just the second item</li>
+            <li>Adding one more</li>
+            <li>Last one</li>
+        </ul>
+        <blockquote>
+            <p>Sometimes we need to add a blockquote to extract some relevant text</p>
+        </blockquote>
+        <p><code>console.log(&quot;Hello world&quot;)</code></p>
+        <pre><code>writeFile(DESTINATED_PATH, myHtml, err =&gt; {
+  if (err) {
+    console.error(err)
+  } else {
+    // file written successfully
+  }
+})
+</code></pre>
+        <hr>
+        <h3>Bakerys are amazig</h3>
+        <p><a href="https://www.markdownguide.org/basic-syntax/">link</a> </p>
+        <p><img src="https://images.pexels.com/photos/35657334/pexels-photo-35657334.png" alt="A bakery"></p>
+        <p>* Without the backslash, this would be a bullet in an unordered list.</p>
+        <p>$$
+            \int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
+            $$ </p>
+
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
 </body>
 
 </html>
