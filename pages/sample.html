@@ -14,19 +14,43 @@
         };
     </script>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github-dark-dimmed.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="/src/pages.css" />
     <title>Sample title</title>
 </head>
 
 <body>
-    <div id="app">
-        <h1>Hola mundo!</h1>
+    <main class="main">
+        <div class="main-info">
+            <h1>Lorem ipsum dolor sit amet consectetur adipisicing eli olestias libero impedit</h1>
+            <div class="categories">
+                <span class="category">Life style ☕</span>
+                <span class="category">Programming 💻</span>
+            </div>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil fugit odit omnis, atque, aut repellat
+                voluptas nulla qui harum fuga vel accusantium illo cum soluta quam sed ea eius nisi Lorem ipsum dolor
+                sit amet consectetur adipisicing elit. Tempora voluptatem velit suscipit. Modi animi qui non fugiat.
+            </p>
+        </div>
+        <div class="banner-article">
+            <img src="../public/images/pexels-8.jpg" alt="sreet from a random world site">
+        </div>
+
         <h2>Comprendamos la programación de este sitio</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipiscing elit volutpat iaculis, inceptos leo potenti magna fusce sem
-            nunc nulla, montes at natoque lobortis arcu dis primis consequat. Ligula turpis sed mollis cubilia curae
-            fermentum luctus phasellus ultricies quisque cras, taciti sollicitudin ante tellus pellentesque dapibus
-            lacus habitant at nostra. <strong>Phasellus</strong> natoque condimentum cras sollicitudin parturient nunc
-            <strong>est ligula, proin eleifend dis commodo dictumst</strong> fringilla nisi, posuere purus metus
-            imperdiet nostra lacus tempor.
+            nunc nulla, montes at natoque lobortis arcu dis leo potenti
+            <code>console.log(&quot;Hello world&quot;)</code> primis consequat. Ligula turpis sed mollis cubilia curae
+            fermentum luctus <a href="https://www.markdownguide.org/basic-syntax/">phasellus ultricies quisque</a> cras,
+            taciti sollicitudin ante tellus pellentesque dapibus lacus habitant at nostra. <strong>Phasellus</strong>
+            natoque condimentum cras sollicitudin parturient nunc <strong>est ligula, proin eleifend dis commodo
+                dictumst</strong> fringilla nisi, posuere purus metus imperdiet nostra lacus tempor.
         </p>
         <ul>
             <li>This is a list template</li>
@@ -35,29 +59,45 @@
             <li>Last one</li>
         </ul>
         <blockquote>
-            <p>Sometimes we need to add a blockquote to extract some relevant text</p>
+            <p>Sometimes we need to add a blockquote to extract some relevant text. Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Ipsum, explicabo! Cum voluptates sequi beatae aperiam vero. Mollitia quasi
+                odit exercitationem nam at officia nisi suscipit, quo non sapiente provident veritatis?</p>
         </blockquote>
-        <p><code>console.log(&quot;Hello world&quot;)</code></p>
-        <pre><code>writeFile(DESTINATED_PATH, myHtml, err =&gt; {
-  if (err) {
-    console.error(err)
-  } else {
-    // file written successfully
-  }
+        <pre><code>import fs from &#39;node:fs&#39;
+import { marked } from &#39;marked&#39;
+import { template } from &#39;./generator-template.js&#39;
+
+// Documents info
+
+const docName = &#39;sample&#39;
+const docTitle = &#39;Sample title&#39;
+const DESTINATED_PATH = `../pages/${docName}.html`
+
+// Reading md file and converting to html
+
+const readingMd = fs.readFileSync(&#39;../md/my-first-article.md&#39;, &#39;utf-8&#39;)
+const htmlFromReadedMd = marked(readingMd)
+const htmlFromTemplate = template({ htmlFromReadedMd, docTitle })
+
+// Writing html file
+// Format: wrinteFile(path, data, callback)
+
+fs.writeFile(DESTINATED_PATH, htmlFromTemplate, err =&gt; {
+  if (err) {
+    console.error(err)
+  } else {
+    // file written successfully
+  }
 })
 </code></pre>
-        <hr>
-        <h3>Bakerys are amazig</h3>
-        <p><a href="https://www.markdownguide.org/basic-syntax/">link</a> </p>
-        <p><img src="https://images.pexels.com/photos/35657334/pexels-photo-35657334.png" alt="A bakery"></p>
+        <p><img src="https://images.pexels.com/photos/20848558/pexels-photo-20848558.jpeg" alt="A bakery"></p>
         <p>* Without the backslash, this would be a bullet in an unordered list.</p>
         <p>$$
             \int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
-            $$ </p>
+            $$</p>
 
-    </div>
+    </main>
 
-    <script type="module" src="/src/main.js"></script>
 </body>
 
 </html>

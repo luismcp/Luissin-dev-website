@@ -1,6 +1,6 @@
 // To export html template
 
-const template = ({ htmlFromReadedMd, docTitle }) => {
+const template = ({ htmlFromReadedMd, articleHtmlTitle }) => {
   return `
 <!doctype html>
 <html lang="en">
@@ -18,15 +18,21 @@ const template = ({ htmlFromReadedMd, docTitle }) => {
         };
     </script>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
-    <title>${docTitle}</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github-dark-dimmed.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="/src/pages.css" />
+    <title>${articleHtmlTitle}</title>
 </head>
 
 <body>
-    <div id="app">
+    <main class="main">
         ${htmlFromReadedMd}
-    </div>
+    </main>
 
-    <script type="module" src="/src/main.js"></script>
 </body>
     
 </html>
