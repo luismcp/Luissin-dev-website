@@ -3,13 +3,13 @@ import { marked } from 'marked'
 import { template } from './generator-template.js'
 
 // Name of the md file
-const articleMdName = 'article'
+const articleMdName = 'presentacion'
 
 // Final html article file name
-const finalHtmlArticleName = 'sample'
+const finalHtmlArticleName = 'presentacion'
 
 // Title of the article (will be used in the HTML title tag)
-const articleHtmlTitle = 'Sample title'
+const articleHtmlTitle = 'Presenación personal'
 
 // Destinated path of the HTML file
 const DESTINATED_PATH = `../pages/${finalHtmlArticleName}.html`

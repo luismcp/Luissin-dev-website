@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$']]
+            }
+        };
+    </script>
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github-dark-dimmed.min.css">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="/src/pages.css" />
+    <title>Deducción de las propiedades de los exponentes y radicales</title>
+</head>
+
+<body>
+    <div class="header">
+
+        <a href="/">
+            <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 20 20">
+                <g fill="currentColor" fill-rule="evenodd" clip-rule="evenodd">
+                    <path
+                        d="M1 10h1.389v7a.5.5 0 0 0 .5.5H16.11a.5.5 0 0 0 .5-.5v-7H18a.5.5 0 0 0 .33-.875l-8.5-7.5a.5.5 0 0 0-.66 0l-8.5 7.5A.5.5 0 0 0 1 10m1.889-1h-.567L9.5 2.667L16.678 9h-.567a.5.5 0 0 0-.5.5v7H3.39v-7a.5.5 0 0 0-.5-.5" />
+                    <path
+                        d="M10.708 11.5h-2.5a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1m-2.5 5v-4h2.5v4z" />
+                </g>
+            </svg>
+        </a>
+
+        <a href="/">
+            <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 24 24">
+                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+                    <path
+                        d="M9.096 21.25v-3.146a3.33 3.33 0 0 1 .758-2.115c-3.005-.4-5.28-1.859-5.28-5.798c0-1.666 1.432-3.89 1.432-3.89c-.514-1.13-.5-3.084.06-3.551c0 0 1.95.175 3.847 1.75c1.838-.495 3.764-.554 5.661 0c1.897-1.575 3.848-1.75 3.848-1.75c.558.467.573 2.422.06 3.551c0 0 1.432 2.224 1.432 3.89c0 3.94-2.276 5.398-5.28 5.798a3.33 3.33 0 0 1 .757 2.115v3.146" />
+                    <path
+                        d="M3.086 16.57c.163.554.463 1.066.878 1.496c.414.431.932.77 1.513.988a4.46 4.46 0 0 0 3.62-.216" />
+                </g>
+            </svg>
+        </a>
+
+        <a href="/pages/presentacion.html">
+            <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 24 24">
+                <g fill="none">
+                    <path d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2s10 4.477 10 10" />
+                    <path stroke="currentColor" stroke-linecap="square" stroke-width="1.5"
+                        d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2s10 4.477 10 10Z" />
+                    <path stroke="currentColor" stroke-linecap="square" stroke-width="2"
+                        d="M12 9v2M8 9v2m2 4h.004v.004H10z" />
+                </g>
+            </svg>
+        </a>
+
+    </div>
+
+    <main class="main">
+        <div class="main-info">
+            <h1>Deducción de las propiedades de los exponentes y radicales</h1>
+            <div class="categories">
+                <span class="category">Maths 🟰</span>
+                <!-- <span class="category"></span> -->
+            </div>
+            <p>
+                El siguiente artículo fue desarrollado en base y como producto del estudio del libro "Matemáticas
+                Cuarto" de "Santalo - Carbonell" (Marcelo Santalo y Vicente Carbonell), en su septima edición del libro,
+                emitida en 1987 por la editorial Joaquín Porrúa, México.
+            </p>
+        </div>
+        <div class="banner-article">
+            <img src="/images/propiedade-de-exponentes-cover.jpg" alt="sreet from a random world site">
+        </div>
+
+        <h2>No, las matemáticas no son tan estrictas</h2>
+        <p>Una de las mayores mentiras autoimpuestas de las matemáticas es considerarlas como una serie de estricas
+            reglas sin personalidad o disposición a cambios. Para sorpresa de muchos, las matemáticas son todo lo
+            contrario.</p>
+        <p>Del mismo modo que como se especifica la extensión de un tipo de archivo en nuestras computadoras, así mismo
+            es neceario especificar el contexto de partida de una operación matemática y algebraica, así como la
+            asunción de los axiomas matemáticos, de este modo, se evitan incongruencias que de otra forma rosarían la
+            inconsistenicia (cosa a evitar en las ciencias exactas).</p>
+        <p>Dependiendo del tipo de operación a realizar, se nos ha facilitado dotar de &quot;cualidades&quot; al algebra
+            con la finalidad de establecer igualdades que nos permitan facilitarnos la manipuación de una u otra
+            expresión. Así pues, las propiedades matemáticas no son más que una serie de igualdades que se rigen bajo
+            las reglas de un contexto en específico; por esta razón, no se deben aplicar como verdades absolutas, sino
+            entender en qué momento se nos permite utilizarlas. </p>
+        <p>En este artículo, se tiene por objetivo mostrar deducciones (no demostraciones) algebraicas de las
+            propiedades de los exponentes y radicales, para así, en determinado momento, ser capaces de responder a la
+            pregunta: ¿Puedo aplicar aquí esta propiedad?.</p>
+        <h2>Lista y deducción</h2>
+        <p>Propiedades a deducir:</p>
+        <ol>
+            <li>Producto de potencias de la misma base</li>
+        </ol>
+        <p>$$
+            a^m \cdot a^n = a^{m+n}
+            $$</p>
+        <ol start="2">
+            <li>Cociente de potencias de la misma base</li>
+        </ol>
+        <p>$$
+            \frac{a^m}{a^n} = a^{m-n}
+            $$</p>
+        <ol start="3">
+            <li>Potencia de un producto</li>
+        </ol>
+        <p>$$
+            (abc)^n = a^n \cdot b^n \cdot c^n
+            $$</p>
+        <ol start="4">
+            <li>Potencia de un cociente o fracción</li>
+        </ol>
+        <p>$$
+            \left(\frac{a}{b}\right)^n = \frac{a^n}{b^n}
+            $$</p>
+        <ol start="5">
+            <li>Raíz de un producto</li>
+        </ol>
+        <p>$$
+            \sqrt[n]{abc} = \sqrt[n]{a} \cdot \sqrt[n]{b} \cdot \sqrt[n]{c}
+            $$</p>
+        <ol start="6">
+            <li>Raíz de un cociente</li>
+        </ol>
+        <p>$$
+            \sqrt[n]{\frac{a}{b}} = \frac{\sqrt[n]{a}}{\sqrt[n]{b}}
+            $$</p>
+        <ol start="7">
+            <li>Raíz de una potencia</li>
+        </ol>
+        <p>$$
+            \sqrt[m]{a^n} = (\sqrt[m]{a})^n
+            $$</p>
+        <ol start="8">
+            <li>Raíz de una raíz</li>
+        </ol>
+        <p>$$
+            \sqrt[m]{\sqrt[n]{a}} = \sqrt[mn]{a}
+            $$</p>
+        <h3>1. Producto de potencias de la misma base</h3>
+        <p>Si:</p>
+        <p>$$
+            n,m \quad\in\quad \mathbb{N}
+            $$</p>
+        <p>Entonces:</p>
+        <p>$$
+            a^m \cdot a^n = a^{m+n}
+            $$</p>
+        <p>Deducción:</p>
+        <p>Entendemos $a^n$ y $a^m$ como un valor &quot;$a$&quot;, &quot;$n$&quot; o &quot;$m$&quot; veces multiplicado
+            por si mismo. Expresado algebraicamente: $a \cdot a \cdot a...\text{(n veces)} = a^n$; o bien $a \cdot a
+            \cdot a... \text{(m veces)} = a^m$. Nótese que el uso de la literal del exponente (en este caso
+            &quot;$n$&quot; y &quot;$m$&quot;) se encuentra dispuesta a cambios para un mismo valor base.</p>
+        <p>Por lo tanto:</p>
+        <p>$$
+            \begin{split}
+            &amp; (a^n) \cdot (a^m) = ? \\
+            &amp; (a \cdot a \cdot a...\text{(n veces)}) \cdot (a \cdot a \cdot a...\text{(m veces)}) = ? \\
+            &amp; a \cdot a \cdot a \text{... (n veces)} \cdot a \cdot a \cdot a \text{... (m veces)} = ?
+            \end{split}
+            $$</p>
+        <p>Tras analizar las igualdades y con la explicación dada previamente, logramos captar que $(a^n) \cdot (a^m)$
+            no es más que la repetición de $&quot;a&quot;$ por $&quot;x&quot;$ cantidad de veces, donde $&quot;x&quot;$
+            es la suma de las $&quot;n&quot;$ cantidad de veces que $&quot;a&quot;$ se repite más $&quot;m&quot;$
+            cantidad de veces que $&quot;a&quot;$ se repite.</p>
+        <p>Si:</p>
+        <p>$$
+            a^n \cdot a^m = a \cdot a \cdot a \text{... (n veces)} \cdot a \cdot a \cdot a \text{... (m veces)} = a^x
+            $$</p>
+        <p>Y:</p>
+        <p>$$
+            x = n+m \quad\text{es decir, n + m repeticiones de &quot;a&quot;}
+            $$</p>
+        <p>Entonces:</p>
+        <p>$$
+            a^n \cdot a^m = a^x = a^{n + m}
+            $$</p>
+        <h3>2. Coiente de potencias de la misma base</h3>
+        <p>Considerando que:</p>
+        <p>$$
+            n,m \quad\in\quad\mathbb{N} \\
+            m \geq n \\
+            a \neq 0
+            $$</p>
+        <p>Entonces:</p>
+        <p>$$
+            \frac{a^m}{a^n} = a^{m-n}
+            $$</p>
+        <p>Deducción:</p>
+        <p>Del mismo modo que el explicado anteriormente, decir &quot;$a^m$&quot; o &quot;$a^n$&quot; se traduce como
+            &quot;la multilpicacion por sí mismo de $&quot;a&quot;$, ya sea $&quot;m&quot;$ o $&quot;n&quot;$ cantidad
+            de veces&quot;.</p>
+        <p>Por lo tanto:</p>
+        <p>$$
+            \frac{a^m}{a^n} = \frac{a\cdot a\cdot a... \text{(m cantidad de veces)}}{a\cdot a\cdot a... \text{(n
+            cantidad de veces)}}
+            $$</p>
+        <p>Y si $m &gt; n$, entonces:</p>
+        <p>$$
+            \begin{split}
+            \frac{a\cdot a\cdot a... \text{(m cantidad de veces)}}{a\cdot a\cdot a... \text{(n cantidad de veces)}}
+            &amp;= \frac{a}{a} \cdot \frac{a}{a} \cdot \frac{a}{a} \cdot ... \frac{a}{1} \cdot \frac{a}{1} \cdot
+            \frac{a}{1}... \\
+            &amp;= 1 \cdot 1 \cdot 1 \cdot... a \cdot a \cdot a \cdot... \text{(m - n cantidad de veces)} \\
+            &amp;= a \cdot a \cdot a \cdot... \text{(m - n cantidad de veces)} \\
+            &amp;= a^{m-n}
+            \end{split}
+            $$</p>
+        <p>Y en el caso de que $m = n$:</p>
+        <p>$$
+            \frac{a\cdot a\cdot a... \text{(m cantidad de veces)}}{a\cdot a\cdot a... \text{(n cantidad de veces)}} =
+            \frac{a}{a} \cdot \frac{a}{a} \cdot \frac{a}{a} \cdot... = 1 \cdot 1 \cdot 1 \cdot... = 1
+            $$</p>
+        <p>Es decir, finalmente la repetición de la multiplicación por sí mismo de valor $&quot;a&quot;$ termina siendo
+            $&quot;m - n&quot;$, demostrando que:</p>
+        <p>$$
+            \frac{a^m}{a^n} = a^{m-n}
+            $$</p>
+        <p>Nótese que en caso de que $&quot;m&quot;$ y $&quot;n&quot;$ sean iguales, el expontente resultante será un
+            $&quot;0&quot;$, por lo que se acepta la convención de que $a^0 = 1$.</p>
+        <h3>3. Potencia de un producto</h3>
+        <p>Considerando que:</p>
+        <p>$$
+            n \quad\in\quad \mathbb{N}
+            $$</p>
+        <p>$$
+            (a \cdot b \cdot c)^n = a^n \cdot b^n \cdot c^n
+            $$</p>
+        <p>Objetivo: probar que las potencias (naturales) son distributivas con respecto al producto.</p>
+        <p>Deducción:</p>
+        <p>$$
+            \begin{split}
+            (a \cdot b \cdot c)^n &amp;= (a \cdot b \cdot c)\cdot (a \cdot b \cdot c)\cdot(a \cdot b \cdot c)...
+            \quad\text{(n veces)} \\
+            &amp;= (a \cdot a \cdot a...\text{(n veces)}) \cdot (b \cdot b \cdot b...\text{(n veces)}) \cdot (c \cdot c
+            \cdot c...\text{(n veces)}) \\
+            &amp;= a^n \cdot b^n \cdot c^n
+            \end{split}
+            $$</p>
+        <h3>4. Potencia de un cociente o fracción</h3>
+        <p>Considerando que:</p>
+        <p>$$
+            b \neq 0 \\
+            n \quad\in\quad \mathbb{N}
+            $$</p>
+        <p>Se dice que:</p>
+        <p>$$
+            \left[ \frac{a}{b} \right]^n = \frac{a^n}{b^n}
+            $$</p>
+        <p>Deducción:</p>
+        <p>Previamente debemos introducir una ampliación al concepto de exponente, donde se acepta que si, a partir de
+            la forma $\frac{a^m}{a^n}$, $n&gt;m$, el exponente negativo representa al reciproco de la base. De forma
+            algebraica esta ampliación luce asi:</p>
+        <p>Si:</p>
+        <p>$$
+            n &gt; m
+            $$</p>
+        <p>Ocurre:</p>
+        <p>$$
+            \begin{split}
+            \frac{a^m}{a^n} &amp;= \frac{a \cdot a \cdot a... \text{(m veces)}}{a \cdot a \cdot a... \text{(n veces)}}\\
+            &amp;= \frac{a}{a} \cdot \frac{a}{a} \cdot \frac{a}{a} \cdot...\text{(m veces)} \cdot \frac{1}{a} \cdot
+            \frac{1}{a} \cdot \frac{1}{a} \cdot... \text{(n-m veces)} \\
+            &amp;= 1 \cdot 1 \cdot 1 \cdot ...\text{(m veces)} \cdot \frac{1}{a} \cdot \frac{1}{a} \cdot \frac{1}{a}
+            \cdot ...\text{(n-m veces)} \\
+            &amp;= \frac{1}{a} \cdot \frac{1}{a} \cdot \frac{1}{a} \cdot ...\text{(n-m veces)} \\
+            &amp;= \frac{1}{a \cdot a \cdot a \cdot... \text{(n-m veces)}} \\
+            &amp;= \frac{1}{a^{n-m}} \\
+            &amp;= a^{-(n-m)}
+            \end{split}
+            $$</p>
+        <p>Por lo tanto:</p>
+        <p>$$
+            \frac{1}{a^{n-m}} = a^{-(n-m)} = a^{m-n}
+            $$</p>
+        <p>Con esto especificado, haciendo uso de esta misma propiedad se vuelve muy sencillo corroborar que en efecto
+            una potencia es distributiva en una fracción bajo la forma $[\frac{a}{b}]^n$.</p>
+        <p>$$
+            \begin{split}
+            \left[ \frac{a}{b} \right]^n &amp;= \left[ \frac{a}{1} \cdot \frac{1}{b} \right]^n \\
+            &amp;= a^n \cdot \left(\frac{1}{b}\right)^n \\
+            &amp;= a^n \cdot (b^{-1})^n \\
+            &amp;= a^n \cdot b^{-n} \\
+            &amp;= \frac{a^n}{1} \cdot \frac{1}{b^n} \\
+            &amp;= \frac{a^n}{b^n}
+            \end{split}
+            $$</p>
+        <h3>5. Raíz de un producto</h3>
+        <p>$$
+            \sqrt[n]{abc} = \sqrt[n]{a} \cdot \sqrt[n]{b} \cdot \sqrt[n]{c}
+            $$</p>
+        <p>Considerando que:
+            $$
+            n \quad\in\quad \mathbb{N}
+            $$</p>
+        <p>Definimos a la raiz de radical &quot;n&quot; como un valor $&quot;a&quot;$ que es igual a &quot;x&quot;
+            multiplicado por sí mismo $&quot;n&quot;$ cantidad de veces. Es decir: $\sqrt[n]{a} = x$ si y solo si $x^n =
+            a$. Como el objetivo es &quot;convertir&quot; la raíz a potencia, dos formas intuitivas de lograrlo son:</p>
+        <p>Forma 1:</p>
+        <p>Ya que:</p>
+        <p>$$
+            x^n = a
+            $$</p>
+        <p>Entonces:</p>
+        <p>$$
+            \begin{split}
+            \sqrt[n]{a} &amp;= x = \sqrt[n]{x^n} \\
+            &amp;= x^{\frac{n}{n}} \\
+            &amp;= (x^n)^{\frac{1}{n}} \\
+            &amp;= a^{\frac{1}{n}}
+            \end{split}
+            $$</p>
+        <p>Forma 2:</p>
+        <p>Recordando propiedades de los exponentes, cuando valores con la misma parte literal se multiplican, el
+            resultado será la misma parte literal elevados a la suma de sus exponentes. Algebraicamente: $a^n \cdot a^m
+            = a^{n+m}$. De esta forma:</p>
+        <p>$$
+            a = \sqrt[n]{a} \cdot \sqrt[n]{a} \cdot \sqrt[n]{a}...\text{(n cantidad de veces)}
+            $$</p>
+        <p>Encontramos que: el radicando (el valor dentro de la raíz) es el mismo; el radical permanece constante. Dicho
+            esto, si convertimos las raíces a exponentes fraccionarios:</p>
+        <p>$$
+            \begin{split}
+            a &amp;= a^{\frac{1}{n}} \cdot a^{\frac{1}{n}} \cdot a^{\frac{1}{n}} \cdot ... \text{(n cantidad de veces)}
+            \\
+            &amp;= \left[a^{\frac{1}{n}}\right]^n \\
+            &amp;= a^{\frac{n}{n}}
+            \end{split}
+            $$</p>
+        <p>A continuacion un ejemplo para mayor comprensión:</p>
+        <p>$$
+            \begin{split}
+            a &amp;= \sqrt[3]{a} \cdot \sqrt[3]{a} \cdot \sqrt[3]{a} \\
+            &amp;= a^{\frac{1}{3}} \cdot a^{\frac{1}{3}} \cdot a^{\frac{1}{3}} \\
+            &amp;= a^{\frac{1}{3} + \frac{1}{3} + \frac{1}{3}} \\
+            &amp;= a^{\frac{3}{3}}
+            \end{split}
+            $$</p>
+        <p>Pues la única suma de 3 fracciones iguales cuyo resultado sea un entero, es la suma de $\frac{1}{3} +
+            \frac{1}{3} + \frac{1}{3}$. Así pues, las unica operacion de fracciones $\frac{1}{n}$ cuya suma sea igual a
+            1, es la suma de $&quot;n&quot;$ cantidad de fracciones.</p>
+        <p>Por lo ende:</p>
+        <p>$$
+            \sqrt[n]{a} = a^{\frac{1}{n}}
+            $$</p>
+        <p>Una vez establecido que las raices tienen un comportamiento muy similar al de las potencias, solo es cuestión
+            de aplicar propiedad distributiva con respecto de la multiplicación a las raíces &quot;transformadas&quot; a
+            potencias fraccionarias:</p>
+        <p>$$
+            \begin{split}
+            \sqrt[n]{abc} &amp;= (abc)^{\frac{1}{n}} \\
+            &amp;= a^{\frac{1}{n}} \cdot b^{\frac{1}{n}} \cdot c^{\frac{1}{n}} \\
+            &amp;= \sqrt[n]{a} \cdot \sqrt[n]{b} \cdot \sqrt[n]{c}
+            \end{split}
+            $$</p>
+        <h3>6. Raíz de un cociente</h3>
+        <p>$$
+            \sqrt[n]{\frac{a}{b}} = \frac{\sqrt[n]{a}}{\sqrt[n]{b}}
+            $$</p>
+        <p>De forma muy similar:</p>
+        <p>$$
+            \begin{split}
+            \sqrt[n]{\frac{a}{b}} &amp;= \left[\frac{a}{b}\right]^{\frac{1}{n}} \\
+            &amp;= \left[\frac{a}{1} \cdot \frac{1}{b} \right]^{\frac{1}{n}} \\
+            &amp;= \left(\frac{a}{1}\right)^{\frac{1}{n}} \cdot \left(\frac{1}{b}\right)^{\frac{1}{n}} \\
+            &amp;= a^{\frac{1}{n}} \cdot \left[b^{-1}\right]^{\frac{1}{n}} \\
+            &amp;= a^{\frac{1}{n}} \cdot b^{-\frac{1}{n}} \\
+            &amp;= a^{\frac{1}{n}} \cdot \frac{1}{b^{\frac{1}{n}}} \\
+            &amp;= \sqrt[n]{a} \cdot \frac{1}{\sqrt[n]{b}} \\
+            &amp;= \frac{\sqrt[n]{a}}{\sqrt[n]{b}}
+            \end{split}
+            $$</p>
+        <h3>7. Raiz de una potencia</h3>
+        <p>Considerando que:</p>
+        <p>$$
+            n,m \quad\in\quad \mathbb{N} \\
+            \text{si &quot;m&quot; es par, &quot;a&quot; debe ser} \geq 0
+            $$</p>
+        <p>Deducción analizando como potencias:</p>
+        <p>$$
+            \begin{split}
+            \sqrt[m]{a^n} &amp;= (a^n)^{\frac{1}{m}} \\
+            &amp;= (a \cdot a \cdot a \cdot... \text{(n veces)})^{\frac{1}{m}} \\
+            &amp;= a^{\frac{1}{m}} \cdot a^{\frac{1}{m}} \cdot a^{\frac{1}{m}} \cdot ... \text{(n veces)} \\
+            &amp;= \sqrt[m]{a} \cdot \sqrt[m]{a} \cdot \sqrt[m]{a} \cdot ...\text{(n veces)} \\
+            &amp;= \left[\sqrt[m]{a}\right]^{n}
+            \end{split}
+            $$</p>
+        <h3>8. Raíz de una raíz</h3>
+        <p>$$
+            \sqrt[m]{\sqrt[n]{a}} = \sqrt[mn]{a}
+            $$</p>
+        <p>Deducción analizando como potencias:</p>
+        <p>$$
+            \begin{split}
+            \sqrt[m]{\sqrt[n]{a}} &amp;= [(a)^{\frac{1}{n}}]^{\frac{1}{m}} \\
+            &amp;= a^{\frac{1}{n} \cdot \frac{1}{m}} \\
+            &amp;= a^{\frac{1}{mn}} \\
+            &amp;= \sqrt[mn]{a}
+            \end{split}
+            $$</p>
+
+    </main>
+
+</body>
+
+</html>

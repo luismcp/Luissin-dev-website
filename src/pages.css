@@ -5,6 +5,11 @@
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+
+    h2,
+    h3 {
+        margin-top: 40px;
+    }
 }
 
 .main h1 {
@@ -104,4 +109,17 @@ pre {
         font-size: 30px;
         line-height: 40px;
     }
+}
+
+/* ---------- Caja de MathJax ---------- */
+
+mjx-container {
+    width: 100%;
+    padding: 10px 0;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scrollbar-width: thin;
+    scrollbar-color: #57a8de transparent;
 }
