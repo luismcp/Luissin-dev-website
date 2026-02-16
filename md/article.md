@@ -16,7 +16,7 @@
 
 ## Comprendamos la programación de este sitio
 
-Lorem ipsum dolor sit amet consectetur adipiscing elit volutpat iaculis, inceptos leo potenti magna fusce sem nunc nulla, montes at natoque lobortis arcu dis leo potenti `console.log("Hello world")` primis consequat. Ligula turpis sed mollis cubilia curae fermentum luctus [phasellus ultricies quisque](https://www.markdownguide.org/basic-syntax/) cras, taciti sollicitudin ante tellus pellentesque dapibus lacus habitant at nostra. **Phasellus** natoque condimentum cras sollicitudin parturient nunc **est ligula, proin eleifend dis commodo dictumst** fringilla nisi, posuere purus metus imperdiet nostra lacus tempor.
+Lorem ipsum dolor sit $( a \ne 0 )$ amet consectetur adipiscing elit volutpat iaculis, inceptos leo potenti magna fusce sem nunc nulla, montes at natoque lobortis arcu dis leo potenti `console.log("Hello world")` primis consequat. Ligula turpis sed mollis cubilia curae fermentum luctus [phasellus ultricies quisque](https://www.markdownguide.org/basic-syntax/) cras, taciti sollicitudin ante tellus pellentesque dapibus lacus habitant at nostra. **Phasellus** natoque condimentum cras sollicitudin parturient nunc **est ligula, proin eleifend dis commodo dictumst** fringilla nisi, posuere purus metus imperdiet nostra lacus tempor.
 
 - This is a list template
 - Just the second item

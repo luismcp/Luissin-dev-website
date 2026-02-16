@@ -5,15 +5,18 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Etiquetas open graph -->
+    <!-- <meta property=”og:image” content=”/images/image.jpg”> -->
+
     <script>
         MathJax = {
             tex: {
-                inlineMath: [['$', '$'], ['\(', '\)']],
-                displayMath: [['$$', '$$'], ['\[', '\]']]
+                inlineMath: [['$', '$']]
             }
         };
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
 
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github-dark-dimmed.min.css">
@@ -34,13 +37,16 @@
                 <span class="category">Programming 💻</span>
             </div>
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil fugit odit omnis, atque, aut repellat
+                Lorem ipsum dolor $a \neq 0$ sit amet consectetur $\frac{5}{2}$ adipisicing elit. Nihil fugit odit
+                omnis, atque, aut
+                \$2.5 and \$5.25
+                repellat
                 voluptas nulla qui harum fuga vel accusantium illo cum soluta quam sed ea eius nisi Lorem ipsum dolor
                 sit amet consectetur adipisicing elit. Tempora voluptatem velit suscipit. Modi animi qui non fugiat.
             </p>
         </div>
         <div class="banner-article">
-            <img src="../public/images/pexels-8.jpg" alt="sreet from a random world site">
+            <img src="/images/pexels-8.jpg" alt="sreet from a random world site">
         </div>
 
         <h2>Comprendamos la programación de este sitio</h2>
